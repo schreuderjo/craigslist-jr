@@ -1,0 +1,15 @@
+<h1>Show Article</h1>
+<%= link_to 'Edit', edit_category_article_path(@category, @article) %>
+<%= link_to 'Delete', [@article.category, @article],
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'} %>
+
+<h3><%= @article.title %></h3>
+
+<p><%= @article.description %></p>
+<p><%= @article.price %></p>
+<p><%= @article.location %></p>
+
+<%= link_to 'Home', categories_path %>
+<%= link_to "Back to #{@category.name}", category_path(params[:category_id]) %>
+
